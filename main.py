@@ -1,10 +1,3 @@
-# NOVO [230, 20, 5, 430]
-# BASE [200, 25, 5, 400, 'P3']
-
-#d = √((230 - 200)² + (20 - 25)² + (5 - 5)² + (430 - 400)²)
-#d = √(900 + 25 + 0 + 900)
-#d = √1825 ≈ 42.72
-
 import math
 
 data = [
@@ -40,7 +33,6 @@ find = [
 
 
 dist = 0
-prev = 0
 min_dist = float('inf')
 closest_pair = None
 i = 0
@@ -49,9 +41,9 @@ i = 0
 for f in find:
     for d in data:
         dist = math.sqrt((f[0] - d[0])**2 + (f[1] - d[1])**2 + (f[2] - d[2])**2 + (f[3] - d[3])**2)
-        #print(f"Distância entre {f} e {d[:-1]}: {dist:.2f}")
+        #print(f"Distância entre {f} e {d[:-1]}: {dist:.2f}") - Usado para debugging
         if dist < min_dist:
-            #print(f"Nova menor distância encontrada: {dist:.2f} entre {f} e {d[:-1]}")
+            #print(f"Nova menor distância encontrada: {dist:.2f} entre {f} e {d[:-1]}") - Usado para debugging
             min_dist = dist
             closest_pair = (f, d)
             try:
